@@ -1,0 +1,9 @@
+Avec = default :
+
+Le compilateur accepte le programme sans erreur.
+
+Lancement 1 : x.a = 1360470760
+Lancement 2 : à compléter
+Lancement 3 : à compléter
+
+Avec P() = default;, le constructeur existe, mais le membre entier a n'est pas initialisé. Il peut donc contenir une valeur indéterminée.
