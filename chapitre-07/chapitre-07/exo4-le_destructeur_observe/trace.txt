@@ -1,0 +1,17 @@
+Main nait
+Fonction nait
+Fin fonction
+Fonction meurt
+Bloc nait
+Fin bloc
+Bloc meurt
+New sans delete nait
+New avec delete nait
+New avec delete meurt
+Premier objet nait
+Deuxieme objet nait
+Fin bloc deux objets
+Deuxieme objet meurt
+Premier objet meurt
+Fin main
+Main meurt
