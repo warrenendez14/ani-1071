@@ -1,0 +1,46 @@
+Points :
+Ordre 1 : (9.64645, 3.93934) (11.0607, 5.35355) (10.3536, 6.06066) (8.93934, 4.64645)
+
+Ordre 2 : (10, 4.29289) (11.4142, 5) (10, 5.70711) (8.58579, 5)
+
+Ordre 3 : (3.18198, 9.54594) (4.59619, 10.9602) (3.88909, 11.6673) (2.47487, 10.253)
+
+Côtés et angles :
+
+Ordre 1 : côtés 2, 1, 2, 1 ; angle 90°. Ordre 2 : côtés 1,58 ; angle 90°. Ordre 3 : côtés 2, 1, 2, 1 ; angle 90°.
+
+Dessins :
+
+Échelle : 2 colonnes et 2 lignes par unité.
+
+Ordre 1 :
+
+text
+                    #
+                   ###
+                  ## ##
+                 ## ##
+                  ###
+                   #
+
+
+Ordre 2 :
+
+text
+                   ##
+                 ######
+                 ######
+                   ##
+
+
+Ordre 3 :
+
+text
+     ###
+
+
+Carré déplacé :
+
+L'ordre 1 est le bon : échelle, rotation puis translation. Il conserve la forme et place le carré 
+au bon endroit. L'ordre 2 tourne avant l'échelle et donne une autre forme. L'ordre 3 effectue la 
+rotation après la translation et déplace également le carré.
