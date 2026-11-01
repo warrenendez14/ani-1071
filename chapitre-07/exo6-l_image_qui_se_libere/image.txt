@@ -1,0 +1,21 @@
+Vivantes :
+
+Avant la boucle : 0 Tour 1 : 1 image(s) vivante(s) Tour 2 : 1 image(s) vivante(s) Tour 3 : 1 image(s) vivante(s) Tour 4 : 1 image(s) vivante(s) Tour 5 : 1 image(s) vivante(s) Tour 6 : 1 image(s) vivante(s) Tour 7 : 1 image(s) vivante(s) Tour 8 : 1 image(s) vivante(s) Tour 9 : 1 image(s) vivante(s) Tour 10 : 1 image(s) vivante(s) Apres la boucle : 0
+
+Dessin :
+
+##         ##
+###       ###
+ ##       ##     
+   ### ###       
+     ###         
+   ### ###       
+ ##       ##     
+###       ###
+##         ##
+
+Copie :
+error: use of deleted function 'Image::Image(const Image&)'
+La copie est interdite grâce à Image(const Image&) = delete.
+
+Si la copie était autorisée, les deux images partageraient les mêmes pixels. À la fin du programme, les deux destructeurs libéreraient la même mémoire, provoquant une double libération et une erreur.
