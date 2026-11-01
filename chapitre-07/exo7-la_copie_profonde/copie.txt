@@ -1,0 +1,20 @@
+Image a :
+sur la troisième ligne.
+
+Image b :
+sur la troisième ligne.
+
+Image c :
+sur la troisième ligne.
+
+Vivantes :
+Dans le bloc : 3 Après le bloc : 0
+
+Sans le test :
+Lancement 1 : Adresse avant : 0x7f7826705fc0 Adresse après : 0x7f7826705fc0
+
+Lancement 2 : à exécuter. Lancement 3 : à exécuter.
+
+L'image après a = a est vide ou incorrecte.
+
+Sans le test, a=a libère les pixels de a, puis essaie de recopier les pixels depuis la même adresse déjà libérée. Cela provoque une lecture de mémoire invalide et un comportement indéfini.
