@@ -1,0 +1,11 @@
+Essais :
+Multiplication par 2 : FFC864FF Addition : FFFAFAFF Lerp : 967D7DC0 L'opacité a reste inchangée pendant la multiplication.
+
+Sans saturer :
+200 + 200 = 144. Le résultat dépasse 255 et déborde dans unsigned char, ce qui donne 144.
+
+Empaquetage :
+Original : C86432FF Après aller-retour : C86432FF
+
+Message :
+Le constructeur Couleur(unsigned int) empêche l'initialisation avec quatre valeurs entre accolades. Le compilateur signale une erreur. J'utilise désormais le constructeur avec un entier, par exemple Couleur(0xC86432FF), pour que le programme compile.
