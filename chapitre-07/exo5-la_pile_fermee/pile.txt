@@ -1,0 +1,18 @@
+Messages :
+
+Première erreur : p.nombre = -5; error: 'int Pile::nombre' is private within this context
+
+Deuxième erreur : f.tete = 7; error: 'int File::tete' is private within this context
+
+Essais :
+Pile apres 150 empilements : 100 Pile apres 200 depilements : 0 File apres 150 enfilements : 100 File apres 50 defilements : 50 File apres 50 nouveaux enfilements : 100
+
+Invariant de la file :
+Le nombre d'éléments reste toujours compris entre 0 et 100. La tête et la queue restent comprises entre 0 et 99. La queue avance circulairement grâce au modulo 100. Elle peut être plus petite que la tête. Lorsque la file est vide ou pleine, la tête et la queue peuvent être égales.
+
+Struct :
+Avec struct Pile et private:, le compilateur refuse p.nombre = -5 car nombre reste privé.
+
+Sans private:, les membres deviennent publics par défaut et p.nombre = -5 compile.
+
+On conclut que class rend les membres privés par défaut, tandis que struct les rend publics par défaut. Le mot private: permet de protéger les membres dans les deux cas.
