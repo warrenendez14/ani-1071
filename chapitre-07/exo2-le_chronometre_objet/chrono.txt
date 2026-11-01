@@ -1,0 +1,11 @@
+Boucle :
+Total : 4999999950000000 Durée 1 : 0.286263518 s Durée 2 : 0.348725163 s Durée 3 : 0.264210774 s
+
+Le plus court :
+Durée 1 : 0.000000079 s Durée 2 : 0.000000074 s Durée 3 : 0.000000067 s Durée 4 : 0.000000069 s Durée 5 : 0.000000066 s
+Les durées sont très petites, de l'ordre de 66 à 79 nanosecondes. Cela montre que le chronomètre distingue des intervalles de temps très courts. La plus petite durée observée est 0.000000066 seconde.
+
+Message :
+error: passing 'const Chrono' as 'this' argument discards qualifiers
+
+L'appel k.ecoule() fonctionne car la méthode est déclarée const et ne modifie pas l'objet. En revanche, k.redemarrer() est refusé car cette méthode modifie le membre debut. Un objet déclaré const ne peut pas être modifié.
