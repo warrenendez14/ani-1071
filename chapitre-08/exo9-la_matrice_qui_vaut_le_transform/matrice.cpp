@@ -1,9 +1,12 @@
 #include <iostream>
 #include <cmath>
+#include <algorithm>
 
 struct Vec2 {
     double x=0,y=0;
 };
+
+Vec2 operator+(Vec2 a,Vec2 b){return {a.x+b.x,a.y+b.y};}
 
 struct Transform {
     Vec2 position;
@@ -28,18 +31,21 @@ struct Transform {
 struct Mat3 {
     double m[3][3]{};
 
-    static Mat3 identite() {
+    static Mat3 identite(){
         Mat3 a;
-        for(int i=0;i<3;i++) a.m[i][i]=1;
+        for(int i=0;i<3;i++)a.m[i][i]=1;
         return a;
     }
 
-    static Mat3 depuis(const Transform& t) {
+    static Mat3 depuis(const Transform& t){
         Mat3 a;
         double c=cos(t.rotation),s=sin(t.rotation);
-        a.m[0][0]=t.echelle.x*c; a.m[0][1]=-t.echelle.y*s;
-        a.m[1][0]=t.echelle.x*s; a.m[1][1]=t.echelle.y*c;
-        a.m[0][2]=t.position.x; a.m[1][2]=t.position.y;
+        a.m[0][0]=t.echelle.x*c;
+        a.m[0][1]=-t.echelle.y*s;
+        a.m[1][0]=t.echelle.x*s;
+        a.m[1][1]=t.echelle.y*c;
+        a.m[0][2]=t.position.x;
+        a.m[1][2]=t.position.y;
         a.m[2][2]=1;
         return a;
     }
@@ -59,15 +65,18 @@ struct Mat3 {
     }
 };
 
-int main() {
+int main(){
     Transform a,b;
-    a.rotation=1.57079632679;
-    b.echelle={2,1};
+    a.echelle={2,1};
+    b.rotation=0.78539816339;
 
     Vec2 p{1,0};
+
     Vec2 direct=a.appliquer(b.appliquer(p));
     Vec2 compose=a.compose(b).appliquer(p);
+    Vec2 matrice=(Mat3::depuis(a)*Mat3::depuis(b)).appliquer(p);
 
-    std::cout<<direct.x<<" "<<direct.y<<'\n';
-    std::cout<<compose.x<<" "<<compose.y<<'\n';
+    std::cout<<"Transform : "<<direct.x<<" "<<direct.y<<'\n';
+    std::cout<<"Compose : "<<compose.x<<" "<<compose.y<<'\n';
+    std::cout<<"Matrice : "<<matrice.x<<" "<<matrice.y<<'\n';
 }
