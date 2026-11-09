@@ -1,0 +1,42 @@
+Systèmes :
+Pendant les cinq pas :
+Physique : 60 entités
+Rendu : 60 entités
+
+Après destruction et création :
+Physique : 58 entités
+Rendu : 52 entités
+
+Le système physique traite les entités possédant Corps et Transform.
+Le système rendu traite les entités possédant Sprite et Transform.
+
+Numéros :
+49
+44
+39
+34
+29
+
+Les numéros sont récupérés dans l'ordre inverse de libération grâce à la free list.
+
+Image :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EEEEEEEEEEEEEEEEEEEE#### #### #### ####
