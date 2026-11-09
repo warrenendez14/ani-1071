@@ -1,0 +1,10 @@
+Avec virtual :
+Premier objet (Ennemi*) :
+~Fantome, taille : 1000
+~Trace
+~Ennemi
+
+Deuxième objet (Fantome*) :
+~Fantome, taille : 1000
+~Trace
+~Ennemi
