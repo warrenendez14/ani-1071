@@ -1,0 +1,32 @@
+Message :
+error: request for member 'position' is ambiguous
+La classe Ennemi possède deux membres position hérités de Entite.
+
+Tailles :
+Sans héritage virtuel :
+Vec2 = 16 octets
+Entite = 16 octets
+Mobile = 32 octets
+Visible = 24 octets
+Ennemi = 56 octets
+
+Avec héritage virtuel :
+À compléter avec les résultats de compilation.
+
+Sans virtual, Ennemi contient deux Entite, donc deux positions.
+Avec virtual, Ennemi partage une seule Entite.
+
+Deux positions :
+Sans virtual :
+Mobile& affiche 3
+Visible& affiche une valeur indéterminée si elle n'est pas initialisée.
+
+Avec virtual :
+VMobile& affiche 3
+VVisible& affiche 3
+Les deux références partagent la même position.
+
+Pourquoi jamais :
+Le diamant duplique les membres hérités.
+Il crée des ambiguïtés et augmente la taille des objets.
+L'héritage virtuel évite cette duplication.
