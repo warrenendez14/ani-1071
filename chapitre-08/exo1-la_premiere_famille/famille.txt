@@ -1,0 +1,16 @@
+Tailles :
+Vec2 = 16 octets
+const char* = 8 octets
+Entite = 24 octets
+Ennemi = 32 octets
+Joueur = 32 octets
+
+Écarts :
+Vec2 : deux double de 8 octets.
+Entite : Vec2 (16) + pointeur (8) = 24.
+Ennemi : Entite (24) + int (4) + bourrage (4) = 32.
+Joueur : Entite (24) + double (8) = 32.
+
+Message :
+error: 'Vec2 Entite::position' is protected within this context
+main ne peut pas accéder directement à position car elle est protected. La méthode modifier() fonctionne car Ennemi hérite de Entite.
