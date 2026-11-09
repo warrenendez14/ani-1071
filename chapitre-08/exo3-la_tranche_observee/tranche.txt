@@ -1,0 +1,12 @@
+Sorties :
+entite
+ennemi
+ennemi
+
+Tailles :
+sizeof(Entite) = 8 octets
+sizeof(Ennemi) = 16 octets
+
+Pourquoi :
+La fonction f reçoit une copie de Ennemi sous forme Entite. Elle perd le membre degats : c'est le slicing (troncature d'objet).
+Les fonctions g et h reçoivent respectivement une référence et un pointeur vers l'objet original. Elles conservent le type réel Ennemi et affichent donc ennemi.
