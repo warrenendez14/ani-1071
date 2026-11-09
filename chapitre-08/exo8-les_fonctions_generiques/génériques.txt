@@ -1,0 +1,20 @@
+Essais :
+echanger(3,7) : 7 et 3
+maximum(7,3) : 7
+minimum(2.5,8.5) : 2.5
+clamp(12,0,10) : 10
+echanger(Vec2,Vec2) : échange les deux vecteurs.
+trier(mots,5) : trie les cinq chaînes.
+
+Messages :
+maximum(u,v) : refusé car Vec2 ne possède pas l'opérateur >.
+maximum(3,7.5) : refusé car les arguments sont de types différents : int et double.
+
+Tri des chaînes :
+Yaounde
+Zoo
+abricot
+arbre
+zebre
+
+Le tri est lexicographique. Les majuscules passent avant les minuscules dans l'ordre des caractères.
