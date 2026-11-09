@@ -1,0 +1,15 @@
+Avec virtual :
+gEnnemi = 10
+gFantome = 30
+gRobot = 20
+Les méthodes des classes réelles sont appelées grâce au polymorphisme.
+
+Sans virtual :
+gEnnemi = 60
+gFantome = 0
+gRobot = 0
+Tous les appels utilisent la méthode de Ennemi.
+
+Faute de frappe :
+Avec override : le compilateur refuse car deplacr ne redéfinit aucune méthode de la classe mère.
+Sans override : le programme compile, mais la méthode de Fantome n'est pas appelée.
