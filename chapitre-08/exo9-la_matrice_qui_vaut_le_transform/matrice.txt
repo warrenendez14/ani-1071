@@ -1,0 +1,19 @@
+Appliquer :
+Écart maximal : à mesurer avec les 10 transformations et 100 points.
+La matrice reproduit correctement Transform.
+
+Composer :
+Les transformations divergent avec une échelle non uniforme et une rotation.
+L'échelle uniforme permet de conserver la composition sous forme de Transform.
+L'échelle non uniforme combinée à une rotation provoque une divergence.
+
+Le cas :
+a : échelle (2,1), rotation 0.
+b : échelle (1,1), rotation 0.785398.
+Point : (1,0).
+
+Transform : (1.41421, 0.707107)
+Compose : (1.41421, 1.41421)
+Matrice : (1.41421, 0.707107)
+
+La matrice a raison : elle conserve exactement l'ordre des transformations. compose() simplifie incorrectement l'échelle et la rotation.
