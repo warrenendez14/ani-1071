@@ -1,0 +1,20 @@
+Tableau :
+
+Depuis Derivee :
+publique : compile
+protegee : compile
+privee : refusé
+
+Depuis main :
+publique : compile
+protegee : refusé
+privee : refusé
+
+Messages :
+'int Base::privee' is private within this context
+'int Base::protegee' is protected within this context
+'int Base::privee' is private within this context
+
+Fonction libre :
+Refusé. Une fonction libre ne fait pas partie de Base ni de Derivee. Elle ne peut donc pas accéder au membre protegee.
+Message : 'int Base::protegee' is protected within this context
