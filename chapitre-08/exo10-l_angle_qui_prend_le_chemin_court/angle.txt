@@ -1,0 +1,29 @@
+Transition :
+350 vers 10 :
+lerp passe par 180 degrés.
+lerpAngle passe par 0 degrés.
+
+10 vers 350 :
+lerp passe par 180 degrés.
+lerpAngle passe par 0 degrés.
+
+Demi-tour :
+De 0 vers 180, lerp et lerpAngle donnent des chemins différents.
+À 180 degrés, les deux chemins sont possibles car l'écart est exactement un demi-tour.
+
+Caméra :
+La caméra avec lerp fait un grand détour au passage de 360 à 0.
+La caméra avec lerpAngle suit le chemin court.
+
+344 341.2 109.32
+348 343.24 218.236
+352 345.868 43.2442
+356 348.908 225.643
+0 244.235 117.813
+4 172.165 113.895
+8 122.915 25.5142
+12 89.6407 149.564
+16 67.5485 153.599
+20 53.284 24.1758
+24 44.4988 302.15
+28 39.5491 67.5669
