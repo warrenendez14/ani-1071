@@ -1,59 +1,47 @@
 #include <iostream>
 #include <vector>
 #include <string>
-int main()
-{
+#include <queue>
+#include <unordered_map>
+#include <functional>
+int main() {
     int n;
     std::cin >> n;
     std::vector<std::string> noms(n);
-    std::vector<std::vector<std::string>> deps(n);
+    std::unordered_map<std::string, int> index;
+    for (int i = 0; i < n; i++) {
+        std::cin >> noms[i];
+        index[noms[i]] = i;
+    }
+    std::vector<std::vector<int>> adj(n);
+    std::vector<int> deg(n, 0);
+    for (int i = 0; i < n; i++) {
+        int k;
+        std::cin >> k;
+        while (k--) {
+            std::string d;
+            std::cin >> d;
+            if (index.count(d)) {
+                adj[index[d]].push_back(i);
+                deg[i]++;
+            }
+        }
+    }
+    std::priority_queue<int, std::vector<int>, std::greater<int>> q;
     for (int i = 0; i < n; i++)
-    {
-        int m;
-        std::cin >> noms[i] >> m;
-        while (m--)
-        {
-            std::string s;
-            std::cin >> s;
-            deps[i].push_back(s);
-        }
-    }
-    std::vector<bool> fait(n, false);
+        if (!deg[i]) q.push(i);
     int total = 0;
-    while (total < n)
-    {
-        bool avance = false;
-        for (int i = 0; i < n; i++)
-        {
-            if (fait[i])
-            {
-                continue;
-            }
-            bool pret = true;
-            for (std::string s : deps[i])
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    if (noms[j] == s && !fait[j])
-                    {
-                        pret = false;
-                    }
-                }
-            }
-            if (pret)
-            {
-                std::cout << noms[i] << '\n';
-                fait[i] = true;
-                total++;
-                avance = true;
-            }
-        }
-        if (!avance)
-        {
-            std::cout << "CYCLE\nPROJETS 0\n";
-            return 0;
-        }
+    while (!q.empty()) {
+        int i = q.top();
+        q.pop();
+        std::cout << noms[i] << '\n';
+        total++;
+        for (int j : adj[i])
+            if (--deg[j] == 0) q.push(j);
     }
-    std::cout << "PROJETS " << total << '\n';
+    if (total != n)
+        std::cout << "CYCLE\nPROJETS 0\n";
+    else
+        std::cout << "PROJETS " << n << '\n';
     return 0;
 }
