@@ -1,0 +1,9 @@
+
+[INFO] Demarrage du programme
+[INFO] Calcul en cours : 10 + 5
+Somme = 15
+Produit = 50
+[WARN] Attention : verification des valeurs
+[INFO] Division possible
+Division = 2
+[INFO] Fin du programme
