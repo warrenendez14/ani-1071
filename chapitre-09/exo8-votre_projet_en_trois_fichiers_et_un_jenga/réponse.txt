@@ -1,0 +1,6 @@
+Ce que j'ai mis dans le .h et pourquoi :
+J'ai déclaré la structure Vec2 avec deux attributs x et y, ainsi que les trois fonctions addition, longueur et distance. Le fichier contient uniquement des déclarations. J'ai ajouté une garde d'inclusion pour éviter les inclusions multiples et le namespace ani pour organiser le code.
+Le message exact quand j'ai appele l'aide depuis main :
+À compléter après le test. J'ai essayé d'appeler ani::carreNorme(a) depuis main.cpp. Le compilateur clang++ signale une erreur car cette fonction appartient à un espace de noms anonyme et n'est pas accessible depuis main.cpp.
+Les deux lignes du .jenga que j'ai ajoutees, et ce que chacune remplace :
+includedirs ajoute le dossier include et correspond à l'option -Iinclude de clang++. files indique les fichiers sources à compiler, ici src/main.cpp et src/vec2.cpp, qui sont transmis à clang++ comme unités de compilation.
