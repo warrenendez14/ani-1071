@@ -1,0 +1,15 @@
+
+PREMIERE EXECUTION
+8 tests declares.
+
+TEST AVEC FONCTION CASSEE
+La fonction longueur a ete volontairement modifiee.
+Le test Longueur echoue.
+Le test BordHaut echoue egalement.
+
+TEST APRES CORRECTION
+Tous les tests reussissent.
+
+TEST FLOTTANT
+ASSERT_EQUAL : comparaison exacte des flottants.
+ASSERT_NEAR : comparaison avec une tolerance de 0.0001.
