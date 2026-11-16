@@ -1,0 +1,6 @@
+Les printf que j'ai gardes, et pourquoi :
+J'ai gardé les printf qui affichent les résultats des calculs, notamment la somme, le produit et la division. Ces informations constituent les résultats du programme et ne sont pas des messages de diagnostic.
+Ce que le journal ajoute que printf ne donnait pas :
+Le journal permet de classer les messages selon leur gravité avec Info, Warn et Error. Il facilite également le suivi de l'exécution et permet d'utiliser un format à accolades pour afficher plusieurs valeurs.
+Pourquoi mon Debug ne s'affiche pas :
+Le message Debug ne s'affiche pas parce que le niveau de journalisation par défaut filtre les messages de débogage. Il existe bien, mais il n'est pas affiché avec la configuration actuelle.
