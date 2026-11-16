@@ -1,0 +1,2 @@
+includedirs = ["include"]
+files = ["src/main.cpp", "src/vec2.cpp"]
