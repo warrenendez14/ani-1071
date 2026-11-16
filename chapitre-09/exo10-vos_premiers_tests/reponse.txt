@@ -1,0 +1,6 @@
+Les trois cas de bord que j'ai ecrits :
+J'ai testé le bord bas avec un vecteur nul, le bord haut avec un vecteur (6, 8), et le cas dégénéré avec la distance entre un vecteur et lui-même. Ces tests permettent de vérifier les limites et les cas particuliers.
+Ce qui est tombe quand j'ai casse la fonction :
+J'ai volontairement modifié le calcul de la fonction longueur en remplaçant l'addition des carrés par une soustraction. Les tests Longueur et BordHaut ont échoué. Après avoir corrigé la fonction, les tests ont réussi.
+Ce qui s'est passe avec ASSERT_EQUAL sur un flottant :
+ASSERT_EQUAL effectue une comparaison exacte. À cause de la précision limitée des nombres flottants, le résultat peut être différent de la valeur attendue. J'ai ensuite utilisé ASSERT_NEAR avec une tolérance de 0.0001 pour obtenir une comparaison adaptée.
