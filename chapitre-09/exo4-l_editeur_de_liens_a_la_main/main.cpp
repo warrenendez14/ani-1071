@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 struct F
 {
     std::string nom;
@@ -40,12 +41,18 @@ int main()
             {
                 for (std::string x : f[j].defs)
                 {
-                    if (x == s) ok = true;
+                    if (x == s)
+                    {
+                        ok = true;
+                    }
                 }
             }
             for (std::string x : f[i].statics)
             {
-                if (x == s) ok = true;
+                if (x == s)
+                {
+                    ok = true;
+                }
             }
             if (!ok && std::find(ind.begin(), ind.end(), s) == ind.end())
             {
@@ -62,7 +69,10 @@ int main()
             {
                 for (std::string x : f[j].defs)
                 {
-                    if (x == s) c++;
+                    if (x == s)
+                    {
+                        c++;
+                    }
                 }
             }
             if (c > 1 && std::find(dbl.begin(), dbl.end(), s) == dbl.end())
@@ -71,9 +81,17 @@ int main()
             }
         }
     }
-    for (std::string s : ind) std::cout << "INDEFINI " << s << '\n';
-    for (std::string s : dbl) std::cout << "DOUBLE " << s << '\n';
+    for (std::string s : ind)
+    {
+        std::cout << "INDEFINI " << s << '\n';
+    }
+    for (std::string s : dbl)
+    {
+        std::cout << "DOUBLE " << s << '\n';
+    }
     std::cout << "INDEFINIS " << ind.size() << '\n';
     std::cout << "DOUBLES " << dbl.size() << '\n';
-    std::cout << "VERDICT " << (ind.empty() && dbl.empty() ? "LIE" : "ECHEC") << '\n';
+    std::cout << "VERDICT "
+              << (ind.empty() && dbl.empty() ? "LIE" : "ECHEC") << '\n';
+    return 0;
 }
