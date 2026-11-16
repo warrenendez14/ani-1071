@@ -7,17 +7,16 @@ struct F
     int garde;
     std::vector<int> inc;
 };
-void parcours(int x, std::vector<F>& f, std::vector<int>& s,
-              std::vector<int>& a, std::vector<bool>& v, bool avec)
+void parcours(int x, std::vector<F>& f, std::vector<int>& c,
+              std::vector<bool>& v, bool avec)
 {
     for (int y : f[x].inc)
     {
-        s[y]++;
         if (!avec || !f[y].garde || !v[y])
         {
-            a[y]++;
+            c[y]++;
             v[y] = true;
-            parcours(y, f, s, a, v, avec);
+            parcours(y, f, c, v, avec);
         }
     }
 }
@@ -26,6 +25,7 @@ int main()
     int n;
     std::cin >> n;
     std::vector<F> f(n);
+    std::vector<std::vector<std::string>> noms(n);
     std::vector<int> s(n), a(n);
     std::vector<bool> v(n, false);
     for (int i = 0; i < n; i++)
@@ -36,6 +36,13 @@ int main()
         {
             std::string nom;
             std::cin >> nom;
+            noms[i].push_back(nom);
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (std::string nom : noms[i])
+        {
             for (int j = 0; j < n; j++)
             {
                 if (f[j].nom == nom)
@@ -46,8 +53,9 @@ int main()
             }
         }
     }
-    parcours(0, f, s, a, v, false);
-    parcours(0, f, s, a, v, true);
+    parcours(0, f, s, v, false);
+    std::fill(v.begin(), v.end(), false);
+    parcours(0, f, a, v, true);
     int ts = 0, ta = 0;
     for (int i = 1; i < n; i++)
     {
